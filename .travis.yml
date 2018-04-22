@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+    - "lts/*"
+    - 9
+install:
+  - npm install
+  - npm install -g gulp
+  - npm install -g gulp-cli
+script:
+  - npm test
+  - npm run coverage
+  - gulp publish
+cache:
+  directories:
+    - "node_modules"
+branches:
+  only:
+  - master
+  - develop
